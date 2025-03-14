@@ -668,9 +668,9 @@ function get_neo4j_run_cmd {
     fi
 
     if running_as_root; then
-        su-exec neo4j:neo4j neo4j console --dry-run "${extra_args[@]}"
+        su-exec neo4j:neo4j env -u JAVA_TOOL_OPTIONS neo4j console --dry-run "${extra_args[@]}"
     else
-        neo4j console --dry-run "${extra_args[@]}"
+        env -u JAVA_TOOL_OPTIONS neo4j console --dry-run "${extra_args[@]}"
     fi
 }
 
