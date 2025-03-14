@@ -32,7 +32,7 @@ jobs:
         run: make tag-${{ env.SYSTEM }}-community
 
       - name: Tag the Docker image step 2
-        run: docker tag neo4j:${{ env.NEO4JVERSION }}-${{ env.SYSTEM }} ghcr.io/shouqianba-ft/neo4j:${{ env.NEO4JVERSION }}-community
+        run: docker tag neo4j:${{ env.NEO4JVERSION }}-${{ env.SYSTEM }} ghcr.io/jarvis-u/neo4j:${{ env.NEO4JVERSION }}-community
 
       - name: Push the Docker image
         run: docker push ghcr.io/jarvis-u/neo4j:${{ env.NEO4JVERSION }}-community
